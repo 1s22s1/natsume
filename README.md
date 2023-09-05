@@ -34,7 +34,6 @@ CREATE TABLE charpters (
 ### Insert from CSV file
 
 ```console
-sqlite> .mode csv
-sqlite> .import books.csv books
-sqlite> .import chapters.csv charpters
+sqlite> .import books.csv books --csv --skip 1
+sqlite> .import chapters.csv charpters --csv --skip 1
 ```
