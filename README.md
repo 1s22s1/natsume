@@ -9,11 +9,13 @@ This is sandbox for Database.
 sudo apt-get install -y sqlite3
 ```
 
-### Create tables
+### Start SQlite3
 
 ```console
 sqlite3 ./natsume.sqlite
 ```
+
+### Create tables
 
 ```console
 sqlite> CREATE TABLE books (
@@ -27,6 +29,7 @@ CREATE TABLE charpters (
   sort_number INTEGER,
   name TEXT,
   book_id INTEGER,
+  UNIQUE(book_id, sort_number),
   FOREIGN KEY (book_id) REFERENCES books(id)
 );
 ```
@@ -36,4 +39,10 @@ CREATE TABLE charpters (
 ```console
 sqlite> .import books.csv books --csv --skip 1
 sqlite> .import chapters.csv charpters --csv --skip 1
+```
+
+### Exit SQlite3
+
+```console
+sqlite> .exit
 ```
