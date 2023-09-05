@@ -16,20 +16,24 @@ sqlite3 ./natsume.sqlite
 ```
 
 ```console
-CREATE TABLE books (
+sqlite> CREATE TABLE books (
   id INTEGER PRIMARY KEY,
   title TEXT,
   author TEXT
+);
+
+CREATE TABLE charpters (
+  id INTEGER PRIMARY KEY,
+  book_id INTEGER,
+  sort_number INTEGER,
+  name TEXT
 );
 ```
 
 ### Insert from CSV file
 
 ```console
-sqlite3 ./natsume.sqlite
-```
-
-```console
-.mode csv
-.import books.csv books
+sqlite> .mode csv
+sqlite> .import books.csv books
+sqlite> .import chapters.csv charpters
 ```
