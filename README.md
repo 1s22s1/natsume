@@ -24,9 +24,10 @@ sqlite> CREATE TABLE books (
 
 CREATE TABLE charpters (
   id INTEGER PRIMARY KEY,
-  book_id INTEGER,
   sort_number INTEGER,
-  name TEXT
+  name TEXT,
+  book_id INTEGER,
+  FOREIGN KEY (book_id) REFERENCES books(id)
 );
 ```
 
